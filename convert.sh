@@ -9,8 +9,8 @@ for d in */; do
     d=${d/"/"/};
     if [[ $d != *-opus ]]; then 
         echo ${d}-opus;
-        `mkdir "$d-opus"`; 
-        cd $d
+        mkdir "$d-opus"; 
+        cd "$d"
         for file in *.mp3; do 
             newfile=${file/.mp3/.opus}
             if [ ! -f "../$d-opus/$newfile" ] && [ ! -f "../$d-opus/$newfile.tmp" ] ; then
